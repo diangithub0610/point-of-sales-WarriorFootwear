@@ -268,6 +268,9 @@
                                             <td>{{$barang->ukuran}}</td>
                                             <td>  <a href="{{route('barang.update', $barang->kode_barang)}}" class="btn btn-primary btn-icon-split">
                                                 <span class="text">Edit</span>
+                                            </a>
+                                            <a href="{{route('barang.update', $barang->kode_barang)}}" class="btn btn-danger btn-icon-split">
+                                                <span class="text">hapus</span>
                                             </a></td>
                                         </tr>
                                         @endforeach

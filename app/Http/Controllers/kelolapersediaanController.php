@@ -87,4 +87,19 @@ class kelolapersediaanController extends Controller
         return redirect()->route("barang.tabel");
     }
 
+    public function destroy($id){
+        $barang = barang::find($id);
+        // jika barang tidak ditemukan
+     if(!$barang){
+         return abort(404);
+
+    }
+    $barang->delete();
+    
+    Alert::success('Sukses','barang berhasil dihapus');
+
+    //jika tidak diarahkan pada halaman lain
+    return redirect()->route("barang.tabel");
+    }
+    
 }
