@@ -32,9 +32,12 @@ route::post("/login",[AuthController::class,"login"])->name("login.process");
 Route::get('/admin/dashboard', [DashboardController::class,'admin'])->name('admin.dashboard');
 Route::get('/admin/persediaan/index', [kelolapersediaanController::class,'index'])->name('persediaan.dashboard');
 Route::get('/admin/pesanan/index', [kelolapesananController::class,'index'])->name('pesanan.dashboard');
-Route::get('/admin/reseller/index', [kelolaresellerController::class,'index'])->name('reseller.dashboard');
+
+
+Route::get('/admin/reseller/dashboard', [kelolaresellerController::class,'index'])->name('admin.reseller.dashboard');
 route::get('/admin/laporan/index', [laporanController::class,'index'])->name('laporan.dashboard');
 route::get('admin/checkout/index',[checkoutController::class,'index'])->name('checkout.dashboard');
+
 route::get('reseller/dashboard',[resellerController::class,'index'])->name('reseller.dashboard');
 route::get('reseller/checkout/index',[resellercheckoutController::class,'index'])->name('resellercheckout.dashboard');
 

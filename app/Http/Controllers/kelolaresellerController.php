@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class kelolaresellerController extends Controller
 {
     public function index(){
-        return view('admin.reseller.index');
+        return view('admin.kelolareseller.tabelreseller');
     }
     function tambahreseller(Request $request){
         $validasi = $request->validate([

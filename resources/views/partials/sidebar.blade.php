@@ -45,7 +45,7 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="{{route('reseller.dashboard')}}">
+                <a class="nav-link" href="{{route('admin.reseller.dashboard')}}">
                     <i class="fas fa-fw fa-wrench"></i>
                     <span>kelola reseller</span>
                 </a>
