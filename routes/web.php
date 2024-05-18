@@ -43,5 +43,5 @@ route::get('admin/persediaan/tabel',[kelolapersediaanController::class,'tabel'])
 route::post('admin/reseller/index',[kelolaresellerController::class,'store'])->name('tambahreseller.store');
 route::get('admin/persediaan/index/{id}',[kelolapersediaanController::class,'indexupdate'])->name('viewbarang.update');
 route::put('admin/persediaan/index/{id}',[kelolapersediaanController::class,'update'])->name('barang.update');
-route
+route::delete('admin/persediaan/index/{id}',[kelolapersediaanController::class,'destroy'])->name('barang.delete');
 

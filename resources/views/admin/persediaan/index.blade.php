@@ -1,5 +1,6 @@
 @include('partials.header')
 
+
 <body id="page-top">
 
           <!-- Custom fonts for this template -->
@@ -269,9 +270,15 @@
                                             <td>  <a href="{{route('barang.update', $barang->kode_barang)}}" class="btn btn-primary btn-icon-split">
                                                 <span class="text">Edit</span>
                                             </a>
-                                            <a href="{{route('barang.update', $barang->kode_barang)}}" class="btn btn-danger btn-icon-split">
-                                                <span class="text">hapus</span>
-                                            </a></td>
+                                            <form action="{{ route('barang.delete', $barang->kode_barang) }}" method="POST" style="display: inline;">
+                                                @csrf
+                                                @method('DELETE')
+                                            
+                                                <button type="submit" class="btn btn-danger btn-icon-split">
+                                                    <span class="text">Hapus</span>
+                                                </button>
+                                            </form>
+                                        </td>
                                         </tr>
                                         @endforeach
                                         

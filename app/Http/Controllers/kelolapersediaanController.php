@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 class kelolapersediaanController extends Controller
 {
     public function index(){
+        
         return view('admin.persediaan.create');
     }
 

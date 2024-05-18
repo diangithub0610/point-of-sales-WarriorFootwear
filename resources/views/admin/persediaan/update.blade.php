@@ -245,12 +245,16 @@
         </div>
         <div>
             <label for="kategori">Kategori:</label>
-            <select id="kategori" class="form-control" name="kategori" required value="{{$barang->kategori}}">
+            <select id="kategori" class="form-control" name="kategori" required>
                 <option value="">Pilih Kategori</option>
-                <option value="sneakers">sandal</option>
-                <option value="sneakers">sneakers</option>
+                <option value="sandal" {{ $barang->kategori == 'sandal' ? 'selected' : '' }}>Sandal</option>
+                <option value="sneakers" {{ $barang->kategori == 'sneakers' ? 'selected' : '' }}>Sneakers</option>
             </select>
+            @if ($errors->has('kategori'))
+                <span class="text-danger">{{ $errors->first('kategori') }}</span>
+            @endif
         </div>
+        
         <div>
             <label for="warna">Warna:</label>
             <input type="text" class="form-control" id="warna" name="warna" required value="{{$barang->warna}}">
