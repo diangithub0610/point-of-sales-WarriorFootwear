@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id("id_reseller");
             $table->string("nama_reseller");
             $table->string("kata_sandi_reseller");
+            $table->string("Alamat");
             $table->timestamps();
         });
     }

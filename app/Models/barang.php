@@ -13,6 +13,6 @@ class barang extends Model
 
     protected $primaryKey="kode_barang";
 
-    protected $guard ="kode_barang";
+    protected $fillable =["nama_barang","harga","deskripsi","stok","kategori","warna","ukuran","gambar"];
 
 }

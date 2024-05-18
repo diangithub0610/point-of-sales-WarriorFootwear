@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use illuminate\Foundation\Auth\admin as Authenticatable;
 
 class admin extends Model
 {
@@ -20,5 +22,16 @@ class admin extends Model
 
     //untuk menyembunyikan kolom
     protected $hidden ="kata_sandi_admin";
-    
+
+    public static function attemptLogin($email, $kata_sandi_admin){
+        $admin = self::where("email",$email)->first();
+
+        if ($admin && Hash::check($kata_sandi_admin, $admin->kata_sandi_admin)) {
+            return $admin;
+        }
+        return null;
+    }
+   
 }
+
+
